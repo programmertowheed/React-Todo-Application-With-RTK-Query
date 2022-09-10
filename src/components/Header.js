@@ -52,8 +52,10 @@ export default function Header() {
 
     const clearHeandler = () => {
         Todos.forEach((t) => {
-            const id = t.id;
-            deleteTodo(id);
+            if (t.completed === true) {
+                const id = t.id;
+                deleteTodo(id);
+            }
         });
     };
 
